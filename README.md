@@ -1,5 +1,13 @@
 # Monolith Employee Reimbursement System Backend
 
+# Endpoints
+* GET /health
+* POST /users
+* POST /login
+* POST /reimbursements
+* GET /reimbursements
+* PATCH /reimbursements/:id/status
+
 # Run
 ## .env Setup
 The following environment variables should have values assigned in a `.env` file
