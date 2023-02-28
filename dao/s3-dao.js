@@ -8,7 +8,7 @@ const s3Client = new AWS.S3();
 
 function addReimbursementImage(reimbId, imageBuffer, extension) {
     return s3Client.putObject({
-        Bucket: process.env.POSTS_BUCKET_NAME,
+        Bucket: process.env.RECEIPTS_BUCKET_NAME,
         Key: `${reimbId}.${extension}`,
         Body: imageBuffer
     }).promise();
