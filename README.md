@@ -28,6 +28,9 @@ Tables
         * submitter-index
             * submitter (partition key) (S)
 
+## S3 Bucket
+An S3 bucket is also required to be created for storing .png and .jpg images corresponding to reimbursement receipts
+
 ## .env Setup
 The following environment variables should have values assigned in a `.env` file
 ```text
