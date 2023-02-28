@@ -8,7 +8,26 @@
 * GET /reimbursements
 * PATCH /reimbursements/:id/status
 
-# Run
+# Startup
+## DynamoDB Schema
+Tables
+* users
+    * Primary Key
+        * username (partition key) (S)
+    * Attributes
+        * password (S)
+        * role (S)
+* reimbursements
+    * Primary Key
+        * id (partition key) (S)
+    * Attributes
+        * amount (N)
+        * description (S)
+        * status (S)
+    * Global Secondary Indices
+        * submitter-index
+            * submitter (partition key) (S)
+
 ## .env Setup
 The following environment variables should have values assigned in a `.env` file
 ```text
