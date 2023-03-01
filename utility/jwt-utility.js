@@ -19,7 +19,7 @@ function verifyTokenAndReturnPayload(token) {
   });
 }
 
-verifyTokenAndReturnPayload("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRhIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjc3NTMxNzEyfQ.IwPjkE_bVwk-IxLEu7lYc2OJ_8dD2MPLe8HW12HU0lo")
+//verifyTokenAndReturnPayload("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRhIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjc3NTMxNzEyfQ.IwPjkE_bVwk-IxLEu7lYc2OJ_8dD2MPLe8HW12HU0lo")
 
 module.exports = {
   createToken,

@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+require('aws-sdk/lib/maintenance_mode_message').suppress = true;
 
 const app = express();
 const bodyParser = require('body-parser');

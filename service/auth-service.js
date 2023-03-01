@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const { retrieveUserByUsername } = require('../dao/user-dao');
+const { addUser } = require('../dao/user-dao');
 
 const jwtUtil = require('../utility/jwt-utility');
 const userDao = require('../dao/user-dao');
@@ -27,17 +28,23 @@ async function login(username, password) {
 }
 
 async function register(username, password) {
+  const pattern = /[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/g;
   const errorMessages = [];
   // Check if username meets validation requirements
-  if (!(username.length >= 2 && username.length <= 20)) {
-    errorMessages.push('Username must be between 2 and 20 (inclusive)');
+  if (!(username.length >= 8 && username.length <= 20)) {
+    errorMessages.push('Username must be between 8 and 20 (inclusive)');
   }
 
   // Check if password meets validation requirements
-  if (!(password.length >= 2 && password.length <= 20)) {
-    errorMessages.push('Password must be between 2 and 20 (inclusive)');
+  if (!(password.length >= 8 && password.length <= 20)) {
+    errorMessages.push('Password must be between 8 and 20 (inclusive)');
   }
 
+  // check if password contains special character
+  if (!(pattern.test(password))){
+    errorMessages.push('Password must contain a special character');
+  }
+  
   // Check if username is already taken
   const data = await userDao.retrieveUserByUsername(username);
   if (data.Item) {
